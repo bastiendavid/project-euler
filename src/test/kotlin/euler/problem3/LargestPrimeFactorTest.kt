@@ -21,12 +21,17 @@ internal class LargestPrimeFactorTest {
     }
 
     @Test
+    fun largestPrimeFactorOf20is5() {
+        Assertions.assertThat(LargestPrimeFactor().of(20)).isEqualTo(5)
+    }
+
+    @Test
     fun largestPrimeFactorOf26is13() {
         Assertions.assertThat(LargestPrimeFactor().of(26)).isEqualTo(13)
     }
 
     @Test
-    fun largestPrimeFactorOf600851475143is2() {
+    fun largestPrimeFactorOf600851475143is6857() {
         Assertions.assertThat(LargestPrimeFactor().of(600851475143)).isEqualTo(6857)
     }
 }
