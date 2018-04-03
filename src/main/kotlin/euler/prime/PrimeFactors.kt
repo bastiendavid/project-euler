@@ -25,7 +25,7 @@ class PrimeFactors {
             isPrimeFactor = verifyIsPrimeAndUpdate(current)
         }
         current++
-        while (current < sqrt(remainder.toDouble()).toLong()) {
+        while (current <= sqrt(remainder.toDouble()).toLong()) {
             isPrimeFactor = verifyIsPrimeAndUpdate(current)
             if (!isPrimeFactor) {
                 current += 2

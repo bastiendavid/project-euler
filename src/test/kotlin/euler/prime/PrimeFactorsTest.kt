@@ -22,6 +22,16 @@ internal class PrimeFactorsTest {
     }
 
     @Test
+    fun prime_factors_of_8_are_2_and_2_and_2() {
+        Assertions.assertThat(PrimeFactors().decompose(8)).isEqualTo(Arrays.asList(2L, 2L, 2L))
+    }
+
+    @Test
+    fun prime_factors_of_9_are_3_and_3() {
+        Assertions.assertThat(PrimeFactors().decompose(9)).isEqualTo(Arrays.asList(3L, 3L))
+    }
+
+    @Test
     fun prime_factors_of_13_are_13() {
         Assertions.assertThat(PrimeFactors().decompose(13)).isEqualTo(Arrays.asList(13L))
     }
