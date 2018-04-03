@@ -38,4 +38,32 @@ class PrimeFactors {
 
         return factors
     }
+
+    fun listPrimeNumbers(howMany: Long): ArrayList<Long> {
+        val factors = ArrayList<Long>()
+        var currentNumber: Long = 2
+
+        val isPrime: (Long) -> Boolean = { number ->
+            var prime = true
+            for (i in factors) {
+                if (i > sqrt(number.toDouble())) {
+                    break
+                }
+                if (number % i == 0L) {
+                    prime = false
+                    break
+                }
+            }
+            prime
+        }
+
+        while (factors.size < howMany) {
+            if (isPrime(currentNumber)) {
+                factors.add(currentNumber)
+            }
+            ++currentNumber
+        }
+
+        return factors
+    }
 }

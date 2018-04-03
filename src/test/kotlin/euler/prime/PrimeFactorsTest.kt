@@ -45,4 +45,14 @@ internal class PrimeFactorsTest {
     fun prime_factors_of_26_are_2_and_13() {
         Assertions.assertThat(PrimeFactors().decompose(26)).isEqualTo(Arrays.asList(2L, 13L))
     }
+
+    @Test
+    fun list_first_three_prime_numbers() {
+        Assertions.assertThat(PrimeFactors().listPrimeNumbers(3)).containsExactlyInAnyOrderElementsOf(Arrays.asList(2, 3, 5))
+    }
+
+    @Test
+    fun list_first_ten_prime_numbers() {
+        Assertions.assertThat(PrimeFactors().listPrimeNumbers(10)).containsExactlyInAnyOrderElementsOf(Arrays.asList(2, 3, 5, 7, 11, 13, 17, 19, 23, 29))
+    }
 }
