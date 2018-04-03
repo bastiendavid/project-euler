@@ -1,8 +1,6 @@
 package euler.problem5
 
-import euler.prime.PrimeFactors
 import org.assertj.core.api.Assertions
-import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 
 

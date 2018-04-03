@@ -1,6 +1,6 @@
 package euler.problem7
 
-import euler.prime.PrimeFactors
+import euler.prime.PrimeNumbers
 
 /**
  * https://projecteuler.net/problem=7
@@ -9,6 +9,6 @@ import euler.prime.PrimeFactors
  */
 class PrimeNumber10001st {
     fun numberInPosition(position: Long): Long {
-        return PrimeFactors().listPrimeNumbers(position).last()
+        return PrimeNumbers().listPrimeNumbers(position).last()
     }
 }

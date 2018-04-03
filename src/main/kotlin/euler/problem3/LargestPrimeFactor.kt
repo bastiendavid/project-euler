@@ -1,6 +1,6 @@
 package euler.problem3
 
-import euler.prime.PrimeFactors
+import euler.prime.PrimeNumbers
 
 /**
  * The prime factors of 13195 are 5, 7, 13 and 29.
@@ -8,6 +8,6 @@ import euler.prime.PrimeFactors
  */
 class LargestPrimeFactor {
     fun of(number: Long): Long {
-        return PrimeFactors().decompose(number).last()
+        return PrimeNumbers().decompose(number).last()
     }
 }

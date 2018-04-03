@@ -2,7 +2,7 @@ package euler.prime
 
 import kotlin.math.sqrt
 
-class PrimeFactors {
+class PrimeNumbers {
 
     fun decompose(number: Long): ArrayList<Long> {
 

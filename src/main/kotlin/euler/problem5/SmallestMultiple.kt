@@ -1,6 +1,6 @@
 package euler.problem5
 
-import euler.prime.PrimeFactors
+import euler.prime.PrimeNumbers
 
 /**
  * https://projecteuler.net/problem=5
@@ -12,7 +12,7 @@ class SmallestMultiple {
     fun evenlyDivisibleBelow(below: Long): Any {
         var factors = ArrayList<Long>()
         for (number in 2..below) {
-            val primeFactors = PrimeFactors().decompose(number)
+            val primeFactors = PrimeNumbers().decompose(number)
             factors = mergeCollections(factors, primeFactors)
         }
         return factors.reduce { acc, l -> l * acc }
