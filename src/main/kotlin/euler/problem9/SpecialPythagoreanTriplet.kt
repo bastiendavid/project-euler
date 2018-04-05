@@ -15,23 +15,19 @@ class SpecialPythagoreanTriplet {
         for (a in 0..1000) {
             for (b in 0..1000) {
                 for (c in 0..1000) {
-                    val triplet = Triplet(a, b, c)
-                    if (triplet.isPythagoreanTriplet() && triplet.hasSumOf1000()) {
-                        return triplet
+                    if (isPythagoreanTriplet(a, b, c) && hasSumOf1000(a, b, c)) {
+                        return Triplet(a, b, c)
                     }
                 }
             }
         }
         return null
     }
+
+    fun hasSumOf1000(a: Int, b: Int, c: Int) = a + b + c == 1000
+
+    fun isPythagoreanTriplet(a: Int, b: Int, c: Int) = a < b && b < c && a * a + b * b == c * c
 }
 
-class Triplet(val a: Int, val b: Int, val c: Int) {
-    fun isPythagoreanTriplet(): Boolean {
-        return a < b && b < c && a * a + b * b == c * c
-    }
 
-    fun hasSumOf1000(): Boolean {
-        return a + b + c == 1000
-    }
-}
+data class Triplet(val a: Int, val b: Int, val c: Int)
