@@ -39,7 +39,7 @@ class PrimeNumbers {
         return factors
     }
 
-    fun listPrimeNumbers(howMany: Long): ArrayList<Long> {
+    private fun listPrimeNumbersUntil(stopCondition: (List<Long>) -> Boolean): ArrayList<Long> {
         val factors = ArrayList<Long>()
         var currentNumber: Long = 2
 
@@ -57,7 +57,7 @@ class PrimeNumbers {
             prime
         }
 
-        while (factors.size < howMany) {
+        while (!stopCondition(factors)) {
             if (isPrime(currentNumber)) {
                 factors.add(currentNumber)
             }
@@ -65,5 +65,17 @@ class PrimeNumbers {
         }
 
         return factors
+    }
+
+    fun listPrimeNumbers(howMany: Long): ArrayList<Long> {
+        return listPrimeNumbersUntil({ factors -> factors.size >= howMany })
+    }
+
+    fun listPrimeNumbersBelow(max: Long): ArrayList<Long> {
+        val primeNumbersUntil = listPrimeNumbersUntil({ factors -> !factors.isEmpty() && factors.last() > max })
+        if (!primeNumbersUntil.isEmpty()) {
+            primeNumbersUntil.removeAt(primeNumbersUntil.size - 1)
+        }
+        return primeNumbersUntil
     }
 }

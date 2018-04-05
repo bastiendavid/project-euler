@@ -55,4 +55,9 @@ internal class PrimeNumbersTest {
     fun list_first_ten_prime_numbers() {
         Assertions.assertThat(PrimeNumbers().listPrimeNumbers(10)).containsExactlyInAnyOrderElementsOf(Arrays.asList(2, 3, 5, 7, 11, 13, 17, 19, 23, 29))
     }
+
+    @Test
+    fun list_prime_numbers_below_10() {
+        Assertions.assertThat(PrimeNumbers().listPrimeNumbersBelow(10)).containsExactlyInAnyOrderElementsOf(Arrays.asList(2, 3, 5, 7))
+    }
 }
