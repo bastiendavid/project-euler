@@ -1,5 +1,6 @@
 package euler.problem15
 
+import euler.factorial.Factorial
 import java.math.BigInteger
 
 /**
@@ -13,10 +14,7 @@ class LatticePaths {
     fun numberOfUniquePaths(size: Int): BigInteger {
         // Number of unique permutations if n! / (n/2! * n/2!) with n = 2*size
         // More here: https://brilliant.org/wiki/permutations-with-repetition/
-        return factorial(size * 2) / (factorial(size) * factorial(size))
-    }
-
-    private fun factorial(number: Int): BigInteger {
-        return (1..number).map { BigInteger(it.toString()) }.reduce { acc, i -> i * acc }
+        val factorial = Factorial()
+        return factorial.of(size * 2) / (factorial.of(size) * factorial.of(size))
     }
 }
