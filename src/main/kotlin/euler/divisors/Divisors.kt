@@ -19,4 +19,8 @@ class Divisors {
         list.addAll(subproducts.map { l -> l * numbers[0] })
         return list.distinct().sorted()
     }
+
+    infix fun properDivisorsOf(number: Long): List<Long> {
+        return divisorsOf(number).minus(number)
+    }
 }

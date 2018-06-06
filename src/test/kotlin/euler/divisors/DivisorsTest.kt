@@ -29,4 +29,14 @@ internal class DivisorsTest {
     fun find_divisors_of_28() {
         Assertions.assertThat(Divisors().divisorsOf(28)).containsExactlyInAnyOrderElementsOf(listOf(1, 2, 4, 7, 14, 28))
     }
+
+    @Test
+    fun find_proper_divisors_of_10() {
+        Assertions.assertThat(Divisors().properDivisorsOf(10)).containsExactlyInAnyOrderElementsOf(listOf(1, 2, 5))
+    }
+
+    @Test
+    fun find_proper_divisors_of_28() {
+        Assertions.assertThat(Divisors().properDivisorsOf(28)).containsExactlyInAnyOrderElementsOf(listOf(1, 2, 4, 7, 14))
+    }
 }
