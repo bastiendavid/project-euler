@@ -1,5 +1,6 @@
 package euler.problem12
 
+import euler.divisors.Divisors
 import euler.prime.PrimeNumbers
 
 /**
@@ -28,29 +29,13 @@ class HighlyDivisibleTriangularNumber {
         return (1..position).reduce { acc, i -> acc + i }
     }
 
-    fun divisorsOf(number: Long): List<Long> {
-        return productsOf(PrimeNumbers().decompose(number)).plus(1)
-    }
-
-    fun productsOf(numbers: List<Long>): List<Long> {
-        if (numbers.size <= 1) {
-            return numbers
-        }
-        val list = ArrayList<Long>()
-        val subproducts = productsOf(numbers.subList(1, numbers.size))
-        list.add(numbers[0])
-        list.addAll(subproducts)
-        list.addAll(subproducts.map { l -> l * numbers[0] })
-        return list.distinct().sorted()
-    }
-
     fun firstTriangleNumberWithAtLeastNDivisors(numberOfDivisors: Int): Long {
         var numberIndex = 1L
         var triangleNumber: Long
 
         while (true) {
             triangleNumber = triangleNumber(numberIndex++)
-            if (divisorsOf(triangleNumber).size >= numberOfDivisors) {
+            if (Divisors().divisorsOf(triangleNumber).size >= numberOfDivisors) {
                 return triangleNumber
             }
             numberIndex++
